@@ -2,6 +2,10 @@ import styled from "styled-components";
 import SectionAbout from "./section/SectionAbout";
 import SectionMain from "./section/SectionMain";
 import SectionSkills from "./section/SectionSkills";
+import SectionDevelop from "./section/SectionDevelop";
+import Animation from "./section/Animation";
+import SectionProject from "./section/SectionProject";
+import SectionClose from "./section/SectionClose";
 
 function Main() {
   return (
@@ -9,6 +13,10 @@ function Main() {
       <SectionMain />
       <SectionAbout />
       <SectionSkills />
+      <SectionDevelop />
+      <Animation />
+      <SectionProject />
+      <SectionClose />
     </Container>
   );
 }

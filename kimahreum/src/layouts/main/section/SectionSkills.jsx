@@ -1,6 +1,75 @@
 import styled from "styled-components";
+import { useState, useRef, useEffect } from "react";
 
 function SectionSkills() {
+  const data = [
+    {
+      id: 0,
+      title: "html",
+      content: "html",
+    },
+    {
+      id: 1,
+      title: "css",
+      content: "css",
+    },
+    {
+      id: 2,
+      title: "JavaScript",
+      content: "JavaScript",
+    },
+    {
+      id: 3,
+      title: "react",
+      content: "react",
+    },
+    {
+      id: 4,
+      title: "photoshop",
+      content: "photoshop",
+    },
+    {
+      id: 5,
+      title: "xd",
+      content: "xd",
+    },
+    {
+      id: 6,
+      title: "figma",
+      content: "figma",
+    },
+    {
+      id: 7,
+      title: "github",
+      content: "github",
+    },
+  ];
+
+  const delay = 2500;
+  const [index, setIndex] = useState(0);
+  const timeoutRef = useRef(null);
+
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  }
+
+  useEffect(() => {
+    resetTimeout();
+    timeoutRef.current = setTimeout(
+      () =>
+        setIndex((prevIndex) =>
+          prevIndex === data.length - 1 ? 0 : prevIndex + 1
+        ),
+      delay
+    );
+
+    return () => {
+      resetTimeout();
+    };
+  }, [index]);
+
   return (
     <Container>
       <Title>
@@ -8,116 +77,41 @@ function SectionSkills() {
       </Title>
       <ListWrap>
         <SlideList>
-          <li>
-            <SlideText>
-              <a href="javascript">html</a>
-              <span></span>
-            </SlideText>
-          </li>
-          <li>
-            <SlideText>
-              <a href="javascript">css</a>
-              <span></span>
-            </SlideText>
-          </li>
-          <li>
-            <SlideText>
-              <a href="javascript">javascript</a>
-              <span></span>
-            </SlideText>
-          </li>
-          <li>
-            <SlideText>
-              <a href="javascript">react</a>
-              <span></span>
-            </SlideText>
-          </li>
-          <li>
-            <SlideText>
-              <a href="javascript">photoshop</a>
-              <span></span>
-            </SlideText>
-          </li>
-          <li>
-            <SlideText>
-              <a href="javascript">Xd</a>
-              <span></span>
-            </SlideText>
-          </li>
-          <li>
-            <SlideText>
-              <a href="javascript">figma</a>
-              <span></span>
-            </SlideText>
-          </li>
-          <li>
-            <SlideText>
-              <a href="javascript">GITHUB</a>
-              <span></span>
-            </SlideText>
-          </li>
+          {data.map((item) => (
+            <li
+              key={item.id}
+              className={index === item.id ? SlideTextWrap.active : null}
+              onClick={() => setIndex(item.id)}
+              style={{ transform: `translate3d(${index}%)` }}
+            >
+              {item.title}
+              {data.map((index) => (
+                <span key={index}></span>
+              ))}
+            </li>
+          ))}
         </SlideList>
       </ListWrap>
-      <LineWrap>
-        <li>
-          <Line></Line>
-          <div class="one"></div>
-          <Text>html</Text>
-          <a href="javascript:" class="s2PageBtn"></a>
-        </li>
-        <li>
-          <Line></Line>
-          <div class="one"></div>
-          <Text>css</Text>
-          <a href="javascript:" class="s2PageBtn"></a>
-        </li>
-        <li>
-          <Line></Line>
-          <div class="one"></div>
-          <Text>javascript</Text>
-          <a href="javascript:" class="s2PageBtn"></a>
-        </li>
-        <li>
-          <Line></Line>
-          <div class="one"></div>
-          <Text>react</Text>
-          <a href="javascript:" class="s2PageBtn"></a>
-        </li>
-        <li class="adds2Page">
-          <Line></Line>
-          <div class="one"></div>
-          <Text>photoshop</Text>
-          <a href="javascript:" class="s2PageBtn"></a>
-        </li>
-        <li>
-          <Line></Line>
-          <div class="one"></div>
-          <Text>xd</Text>
-          <a href="javascript:" class="s2PageBtn"></a>
-        </li>
-        <li>
-          <Line></Line>
-          <div class="one"></div>
-          <Text>figma</Text>
-          <a href="javascript:" class="s2PageBtn"></a>
-        </li>
-        <li>
-          <Line></Line>
-          <div class="one"></div>
-          <Text>github</Text>
-          <a href="javascript:" class="s2PageBtn"></a>
-        </li>
-      </LineWrap>
+      <SlideTextWrap>
+        {data
+          .filter((item) => index === item.id)
+          .map((item) => (
+            <SlideText>
+              {item.content}
+              <span></span>
+            </SlideText>
+          ))}
+      </SlideTextWrap>
     </Container>
   );
 }
-
 export default SectionSkills;
 
 const Container = styled.div`
   position: relative;
+
   width: 100%;
-  height: 45vw;
+  height: 40vw;
   max-width: 1400px;
   margin: 0 auto;
   background-color: ${({ theme }) => theme.colors.white_color};
@@ -128,7 +122,7 @@ const Title = styled.div`
 
   h2 {
     font-weight: ${({ theme }) => theme.fonts.weightExtra};
-    color: ${({ theme }) => theme.colors.main_color};
+    color: ${({ theme }) => theme.colors.black_color};
   }
 `;
 
@@ -137,7 +131,7 @@ const ListWrap = styled.div`
   height: 100%;
 
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
 `;
 
 const SlideList = styled.ul`
@@ -148,65 +142,83 @@ const SlideList = styled.ul`
 
   display: flex;
   flex-direction: column;
-  li {
-    z-index: 1;
+  align-items: flex-start;
 
+  li {
     width: 50%;
     height: 300px;
-    background: #fff;
-  }
-`;
 
-const SlideText = styled.div`
-  position: relative;
-  display: inline-block;
-
-  a {
-    z-index: 2;
     position: relative;
-    color: ${({ theme }) => theme.colors.main_color};
-    font-size: ${({ theme }) => theme.fonts.fontExtra};
-    font-weight: ${({ theme }) => theme.fonts.weightExtra};
-  }
-  span {
-    z-index: 1;
-    display: inline-block;
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
-    height: 15%;
-    background: #5053582c;
-    transition: all 0.3s;
-    overflow: hidden;
+    color: #8e8f9a;
+    transition: all 0.3s ease;
+    &:hover {
+      color: #000;
+      &::after {
+        content: "";
+        display: block;
+        width: 34px;
+        height: 1px;
+        background: #8e8f9a;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: #0066ff;
-      transition: all 0.3s;
+        position: absolute;
+
+        top: 20%;
+        left: -10%;
+
+        transition: all 0.3s ease;
+      }
     }
   }
 `;
-const LineWrap = styled.ul`
-  z-index: 2;
-  position: absolute;
+
+const SlideTextWrap = styled.ul`
+  /* position: absolute;
+  width: 100%; */
   top: 20%;
-  left: 30%;
-`;
-const Line = styled.div`
-  width: 34px;
-  height: 1px;
-  background: transparent;
-  margin-bottom: 6px;
-  transition: all 0.3s;
+  right: 30%;
 `;
 
-const Text = styled.div`
-  color: #8e8f9a;
-  font-size: 18px;
+const SlideText = styled.li`
+  position: absolute;
+  display: inline-block;
+  top: 20%;
+  left: 50%;
+
+  background: #fff;
+  color: ${({ theme }) => theme.colors.main_color};
+  font-size: ${({ theme }) => theme.fonts.fontExtra};
+  font-weight: ${({ theme }) => theme.fonts.weightExtra};
+  z-index: 2;
+
+  span {
+    display: inline-block;
+    position: absolute;
+
+    bottom: 4%;
+
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: #5053582c;
+    transition: all 0.7s;
+    overflow: hidden;
+
+    &::before {
+      z-index: -2;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0%;
+      width: 0%;
+      height: 100%;
+      background: #0066ff;
+      transition: all 0.7s;
+    }
+    &:hover {
+      &::before {
+        z-index: -2;
+        width: 100%;
+      }
+    }
+  }
 `;

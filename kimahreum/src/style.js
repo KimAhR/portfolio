@@ -2,11 +2,13 @@ import { ThemeProvider } from "styled-components";
 
 export const theme = {
   colors: {
-    main_color: "#2D4059",
-    red_color: "#EA5455",
+    main_color: "#112D4E",
+    blue_color: "#3F72AF",
+    gray_color: "#F9F7F7",
     white_color: "#ffff",
     orange_color: "#F07B3F",
     yellow_color: "#FFD460",
+    black_color: "#050505",
   },
 
   fonts: {

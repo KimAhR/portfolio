@@ -6,7 +6,6 @@ function SectionAbout() {
       <Title>
         <h2>about</h2>
       </Title>
-      <Name>KIM AH REUM</Name>
       <Wrap>
         <AboutBox>
           <TextBox>
@@ -29,13 +28,13 @@ function SectionAbout() {
 export default SectionAbout;
 
 const Container = styled.div`
+  position: relative;
+
   width: 100%;
   height: 45vw;
   max-width: 1400px;
   margin: 0 auto;
   background-color: ${({ theme }) => theme.colors.white_color};
-
-  position: relative;
 `;
 
 const Title = styled.div`
@@ -43,33 +42,26 @@ const Title = styled.div`
 
   h2 {
     font-weight: ${({ theme }) => theme.fonts.weightExtra};
-    color: ${({ theme }) => theme.colors.main_color};
+    color: ${({ theme }) => theme.colors.black_color};
   }
 `;
 
-const Name = styled.div`
+const Wrap = styled.div`
+  height: 100%;
   display: flex;
   justify-content: flex-end;
-  font-size: ${({ theme }) => theme.fonts.fontExtra};
-  font-weight: ${({ theme }) => theme.fonts.weightExtra};
-  color: ${({ theme }) => theme.colors.main_color};
-`;
-
-const Wrap = styled.div`
-  position: relative;
-  width: 100%;
-  height: 90%;
 `;
 
 const AboutBox = styled.div`
   position: absolute;
-  width: 70%;
-  height: 90%;
-  top: -50px;
+  width: 50%;
+  height: 100%;
+  top: 10%;
   left: 0;
 
-  background: #ea5455;
-  z-index: -1;
+  border-radius: 20%;
+
+  background-color: ${({ theme }) => theme.colors.gray_color};
 `;
 
 const TextBox = styled.div`

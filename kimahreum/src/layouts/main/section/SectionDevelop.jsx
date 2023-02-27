@@ -2,10 +2,8 @@ import styled from "styled-components";
 
 function SectionDevelop() {
   return (
-    <Container>
+    <Container id="develop">
       <Wrap>
-        <div></div>
-
         <Content>
           <Title>
             <h2>Front-End Web Develop</h2>
@@ -24,7 +22,7 @@ function SectionDevelop() {
               <ListTitle>
                 <h3>RESPONSIVE WEBSITE</h3>
                 <div>
-                  <h2>Design Hotels</h2>
+                  <h2>Cuckoo</h2>
                   <HoverWrap>
                     <h4>&lt;VIEW/&gt;</h4>
                     <span></span>
@@ -37,7 +35,7 @@ function SectionDevelop() {
               <ListTitle>
                 <h3>RESPONSIVE WEBSITE</h3>
                 <div>
-                  <h2>Lanbelle</h2>
+                  <h2>DKG Holdings</h2>
                   <HoverWrap>
                     <h4>&lt;VIEW/&gt;</h4>
                     <span></span>
@@ -50,7 +48,7 @@ function SectionDevelop() {
               <ListTitle>
                 <h3>RESPONSIVE WEBSITE</h3>
                 <div>
-                  <h2>GM</h2>
+                  <h2>Zinus</h2>
                   <HoverWrap>
                     <h4>&lt;VIEW/&gt;</h4>
                     <span></span>
@@ -61,9 +59,9 @@ function SectionDevelop() {
             </li>
             <li class="li3">
               <ListTitle>
-                <h3>PC WEBSITE</h3>
+                <h3>RENEWAL WEBSITE</h3>
                 <div>
-                  <h2>Torayamk</h2>
+                  <h2>Fresh</h2>
                   <HoverWrap>
                     <h4>&lt;VIEW/&gt;</h4>
                     <span></span>
@@ -83,7 +81,7 @@ export default SectionDevelop;
 
 const Container = styled.div`
   width: 100%;
-  height: 1100px;
+  height: 50vw;
   margin: 0 auto;
   background-color: ${({ theme }) => theme.colors.main_color};
 
@@ -112,7 +110,7 @@ const Title = styled.div`
   right: 0;
   margin-left: 50px;
   width: 43%;
-  padding-top: 200px;
+  padding-top: 100px;
 
   h2 {
     width: 60%;
@@ -174,7 +172,7 @@ const ContentList = styled.ul`
   width: 100%;
   max-width: 73.5680504%;
   margin: 0 auto;
-  padding-top: 200px;
+  padding-top: 100px;
   li {
     border-top: 1px solid #fff;
     width: 50%;

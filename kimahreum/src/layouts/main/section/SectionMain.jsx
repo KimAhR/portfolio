@@ -18,7 +18,7 @@ export default SectionMain;
 
 const Container = styled.div`
   width: 100%;
-  height: 40vw;
+  height: 45vw;
 
   display: flex;
   align-items: center;

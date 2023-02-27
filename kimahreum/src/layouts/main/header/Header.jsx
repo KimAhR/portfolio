@@ -8,10 +8,15 @@ function Header() {
           <Logo>ahreum</Logo>
           <Nav>
             <ul>
-              <li>ABOUT</li>
-              <li>SKILLS</li>
-              <li>DEVELOP</li>
-              <li>REACT</li>
+              <li>
+                <a href="#about">ABOUT</a>
+              </li>
+              <li>
+                <a href="#develop">DEVELOP</a>
+              </li>
+              <li>
+                <a href="#project">PROJECT</a>
+              </li>
             </ul>
             <HamBtn>
               <span></span>
@@ -68,6 +73,9 @@ const Nav = styled.div`
     li {
       font-size: 15px;
       font-weight: ${({ theme }) => theme.colors.weightSemiBold};
+      a {
+        color: ${({ theme }) => theme.colors.white_color};
+      }
     }
   }
 `;

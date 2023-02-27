@@ -2,18 +2,18 @@ import styled from "styled-components";
 
 function SectionProject() {
   return (
-    <Container>
+    <Container id="project">
       <Wrap>
         <Title>
           <h2>project</h2>
         </Title>
         <TitleBox>
-          <h4>How to work with image</h4>
+          <h4>learn react project</h4>
           <h3>
-            Designers must know how to work with images. Designers should think
-            about various ways for better visual representations and be able to
-            work them. Products and services with great appearance will raise
-            confidence and maximize the effects of marketing strategies.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+            nesciunt, unde vel, ipsum nulla quos alias quidem velit vero est
+            sed. Voluptate nihil distinctio maiores architecto corrupti, quam
+            suscipit laudantium!
           </h3>
         </TitleBox>
         <ListWrap>
@@ -98,7 +98,6 @@ const ListWrap = styled.div`
   ul {
     width: 100%;
     display: flex;
-
     text-align: center;
   }
 `;

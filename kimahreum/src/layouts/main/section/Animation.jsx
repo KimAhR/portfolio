@@ -6,14 +6,14 @@ const Animaition = () => {
       <FlowBox>
         <FlowWrap>
           <Flow>
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JAVASCRIPT</span>
-            <span>REACT</span>
-            <span>GITHUB</span>
-            <span>PHOTOSHOP</span>
-            <span>XD</span>
-            <span>FIGMA</span>
+            <span>KEEP GOING</span>
+            <span>KEEP GOING</span>
+            <span>KEEP GOING</span>
+            <span>KEEP GOING</span>
+            <span>KEEP GOING</span>
+            <span>KEEP GOING</span>
+            <span>KEEP GOING</span>
+            <span>KEEP GOING</span>
           </Flow>
         </FlowWrap>
       </FlowBox>
@@ -51,7 +51,7 @@ const FlowWrap = styled.div`
 
 const Flow = styled.div`
   font-size: 120px;
-  animation: ${flowing} 7s linear infinite;
+  animation: ${flowing} 15s linear infinite;
   span {
     color: ${({ theme }) => theme.colors.main_color};
     display: inline-block;

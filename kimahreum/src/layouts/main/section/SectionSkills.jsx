@@ -71,7 +71,7 @@ function SectionSkills() {
   }, [index]);
 
   return (
-    <Container>
+    <Container id="skill">
       <Title>
         <h2>skill</h2>
       </Title>

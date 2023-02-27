@@ -12,7 +12,7 @@ function Main() {
     <Container>
       <SectionMain />
       <SectionAbout />
-      <SectionSkills />
+      {/* <SectionSkills /> */}
       <SectionDevelop />
       <Animation />
       <SectionProject />

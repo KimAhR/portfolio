@@ -1,6 +1,9 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 function SectionDevelop() {
+  const [isListHover, setIsListHover] = useState(false);
+
   return (
     <Container id="develop">
       <Wrap>
@@ -13,61 +16,89 @@ function SectionDevelop() {
               efficiency of collaboration.
             </h3>
             <View>
-              <a href="#">VIEW</a>
               <span></span>
             </View>
           </Title>
           <ContentList>
-            <li class="li0">
+            <li
+              onMouseOver={() => setIsListHover(true)}
+              onMouseOut={() => setIsListHover(false)}
+            >
               <ListTitle>
                 <h3>RESPONSIVE WEBSITE</h3>
                 <div>
                   <h2>Cuckoo</h2>
                   <HoverWrap>
-                    <h4>&lt;VIEW/&gt;</h4>
+                    <h4>
+                      <a href="https://kimahr.github.io/clonecoding/class/cuckoo">
+                        VIEW
+                      </a>
+                    </h4>
                     <span></span>
                   </HoverWrap>
                 </div>
-                <a href="#"></a>
               </ListTitle>
+              {isListHover && (
+                <ImgBg>
+                  <img src="img/Ellipse5.png"></img>
+                </ImgBg>
+              )}
             </li>
-            <li class="li1">
+            <li>
               <ListTitle>
                 <h3>RESPONSIVE WEBSITE</h3>
                 <div>
                   <h2>DKG Holdings</h2>
                   <HoverWrap>
-                    <h4>&lt;VIEW/&gt;</h4>
+                    <h4>
+                      <a href="https://kimahr.github.io/clonecoding/class/DKG">
+                        VIEW
+                      </a>
+                    </h4>
                     <span></span>
+                    <div>
+                      <div></div>
+                    </div>
                   </HoverWrap>
                 </div>
-                <a href="#"></a>
               </ListTitle>
             </li>
-            <li class="li2">
+            <li>
               <ListTitle>
                 <h3>RESPONSIVE WEBSITE</h3>
                 <div>
                   <h2>Zinus</h2>
                   <HoverWrap>
-                    <h4>&lt;VIEW/&gt;</h4>
+                    <h4>
+                      <a href="https://kimahr.github.io/clonecoding/class/zinus">
+                        VIEW
+                      </a>
+                    </h4>
                     <span></span>
+                    <div>
+                      <div></div>
+                    </div>
                   </HoverWrap>
                 </div>
-                <a href="#"></a>
               </ListTitle>
             </li>
-            <li class="li3">
+            <li>
               <ListTitle>
                 <h3>RENEWAL WEBSITE</h3>
                 <div>
                   <h2>Fresh</h2>
                   <HoverWrap>
-                    <h4>&lt;VIEW/&gt;</h4>
+                    <h4>
+                      <a href="https://kimahr.github.io/clonecoding/fresh/fresh">
+                        VIEW
+                      </a>
+                    </h4>
                     <span></span>
+                    <div>
+                      <div></div>
+                    </div>
                   </HoverWrap>
                 </div>
-                <a href="#"></a>
               </ListTitle>
             </li>
           </ContentList>
@@ -141,19 +172,6 @@ const View = styled.div`
 
   margin-top: 40px;
 
-  a {
-    z-index: 2;
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    font-family: "Montserrat";
-    font-weight: 500;
-    color: #fff;
-    font-size: 15px;
-    transition: all 0.3s;
-  }
-
   span {
     z-index: 1;
     position: absolute;
@@ -206,14 +224,28 @@ const ListTitle = styled.div`
   }
 `;
 
+const ImgBg = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
 const HoverWrap = styled.div`
   h4 {
     font-weight: ${({ theme }) => theme.fonts.weightSemiRegular};
     color: transparent;
     font-size: ${({ theme }) => theme.fonts.fontMicro};
     transition: all 0.3s;
-    &:hover {
-      color: ${({ theme }) => theme.colors.white_color};
+    a {
+      z-index: 2;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      font-family: "Montserrat";
+      font-weight: 500;
+      color: #fff;
+      font-size: 15px;
+      transition: all 0.3s;
     }
   }
 `;

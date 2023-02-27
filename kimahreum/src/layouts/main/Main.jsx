@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import SectionAbout from "./section/SectionAbout";
 import SectionMain from "./section/SectionMain";
-import SectionSkills from "./section/SectionSkills";
+
 import SectionDevelop from "./section/SectionDevelop";
 import Animation from "./section/Animation";
 import SectionProject from "./section/SectionProject";
@@ -12,7 +12,7 @@ function Main() {
     <Container>
       <SectionMain />
       <SectionAbout />
-      {/* <SectionSkills /> */}
+
       <SectionDevelop />
       <Animation />
       <SectionProject />

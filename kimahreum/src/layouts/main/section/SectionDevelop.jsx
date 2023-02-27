@@ -24,6 +24,15 @@ function SectionDevelop() {
               onMouseOver={() => setIsListHover(true)}
               onMouseOut={() => setIsListHover(false)}
             >
+              {isListHover && (
+                <ImgBg>
+                  <img
+                    className="main_01"
+                    alt="main_bg01"
+                    src="img/main_bg01.jpg"
+                  />
+                </ImgBg>
+              )}
               <ListTitle>
                 <h3>RESPONSIVE WEBSITE</h3>
                 <div>
@@ -38,13 +47,20 @@ function SectionDevelop() {
                   </HoverWrap>
                 </div>
               </ListTitle>
+            </li>
+            <li
+              onMouseOver={() => setIsListHover(true)}
+              onMouseOut={() => setIsListHover(false)}
+            >
               {isListHover && (
                 <ImgBg>
-                  <img src="img/Ellipse5.png"></img>
+                  <img
+                    className="main_02"
+                    alt="main_bg02"
+                    src="img/main_bg02.jpg"
+                  />
                 </ImgBg>
               )}
-            </li>
-            <li>
               <ListTitle>
                 <h3>RESPONSIVE WEBSITE</h3>
                 <div>
@@ -63,7 +79,19 @@ function SectionDevelop() {
                 </div>
               </ListTitle>
             </li>
-            <li>
+            <li
+              onMouseOver={() => setIsListHover(true)}
+              onMouseOut={() => setIsListHover(false)}
+            >
+              {isListHover && (
+                <ImgBg>
+                  <img
+                    className="main_03"
+                    alt="main_bg03"
+                    src="img/main_bg03.jpg"
+                  />
+                </ImgBg>
+              )}
               <ListTitle>
                 <h3>RESPONSIVE WEBSITE</h3>
                 <div>
@@ -82,7 +110,19 @@ function SectionDevelop() {
                 </div>
               </ListTitle>
             </li>
-            <li>
+            <li
+              onMouseOver={() => setIsListHover(true)}
+              onMouseOut={() => setIsListHover(false)}
+            >
+              {isListHover && (
+                <ImgBg>
+                  <img
+                    className="main_03"
+                    alt="main_bg03"
+                    src="img/main_bg03.jpg"
+                  />
+                </ImgBg>
+              )}
               <ListTitle>
                 <h3>RENEWAL WEBSITE</h3>
                 <div>
@@ -191,14 +231,28 @@ const ContentList = styled.ul`
   max-width: 73.5680504%;
   margin: 0 auto;
   padding-top: 100px;
+
   li {
     border-top: 1px solid #fff;
     width: 50%;
     height: 190px;
     opacity: 0.5;
+
     &:last-child {
       width: 100%;
     }
+  }
+`;
+
+const ImgBg = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  img {
+    z-index: -1;
   }
 `;
 
@@ -206,6 +260,7 @@ const ListTitle = styled.div`
   position: relative;
   padding-top: 55px;
   padding-left: 25px;
+
   h3 {
     font-weight: ${({ theme }) => theme.fonts.weightSemiRegular};
     color: ${({ theme }) => theme.colors.white_color};
@@ -222,11 +277,6 @@ const ListTitle = styled.div`
       font-size: ${({ theme }) => theme.fonts.fontMediumLarge};
     }
   }
-`;
-
-const ImgBg = styled.div`
-  width: 100%;
-  height: 100%;
 `;
 
 const HoverWrap = styled.div`

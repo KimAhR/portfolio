@@ -19,13 +19,13 @@ function SectionProject() {
         <ListWrap>
           <ul>
             <ListBox>
-              <a href="https://kimahr.github.io/movie-list/">리액트 프로젝트</a>
+              <a href="https://kimahr.github.io/movie-list/">MOVIELIST</a>
             </ListBox>
             <ListBox>
-              <a href="https://kimahr.github.io/todolist/">리액트 프로젝트</a>
+              <a href="https://kimahr.github.io/todolist/">TODOLIST</a>
             </ListBox>
             <ListBox>
-              <a href="https://kimahr.github.io/instagram/">리액트 프로젝트</a>
+              <a href="https://kimahr.github.io/instagram/">INSTAGRAM</a>
             </ListBox>
           </ul>
         </ListWrap>

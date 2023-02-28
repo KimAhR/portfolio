@@ -2,10 +2,13 @@ import styled from "styled-components";
 import { useState } from "react";
 
 function SectionDevelop() {
-  const [isListHover, setIsListHover] = useState(false);
+  const [hover, setHover] = useState(false);
 
   return (
     <Container id="develop">
+      {hover && (
+        <BgImg src={process.env.PUBLIC_URL + hover} alt="cuckoo"></BgImg>
+      )}
       <Wrap>
         <Content>
           <Title>
@@ -15,24 +18,13 @@ function SectionDevelop() {
               create clearer, more logical and reasonable design and to increase
               efficiency of collaboration.
             </h3>
-            <View>
-              <span></span>
-            </View>
+            <View></View>
           </Title>
           <ContentList>
             <li
-              onMouseOver={() => setIsListHover(true)}
-              onMouseOut={() => setIsListHover(false)}
+              onMouseOver={() => setHover("img/main_bg01.jpg")}
+              onMouseOut={() => setHover(null)}
             >
-              {isListHover && (
-                <ImgBg>
-                  <img
-                    className="main_01"
-                    alt="main_bg01"
-                    src="img/main_bg01.jpg"
-                  />
-                </ImgBg>
-              )}
               <ListTitle>
                 <h3>RESPONSIVE WEBSITE</h3>
                 <div>
@@ -43,100 +35,60 @@ function SectionDevelop() {
                         VIEW
                       </a>
                     </h4>
-                    <span></span>
                   </HoverWrap>
                 </div>
               </ListTitle>
             </li>
             <li
-              onMouseOver={() => setIsListHover(true)}
-              onMouseOut={() => setIsListHover(false)}
+              onMouseOver={() => setHover("img/main_bg02.jpg")}
+              onMouseOut={() => setHover(null)}
             >
-              {isListHover && (
-                <ImgBg>
-                  <img
-                    className="main_02"
-                    alt="main_bg02"
-                    src="img/main_bg02.jpg"
-                  />
-                </ImgBg>
-              )}
               <ListTitle>
                 <h3>RESPONSIVE WEBSITE</h3>
                 <div>
                   <h2>DKG Holdings</h2>
                   <HoverWrap>
                     <h4>
-                      <a href="https://kimahr.github.io/clonecoding/class/DKG">
+                      <a href="https://kimahr.github.io/clonecoding/class/cuckoo">
                         VIEW
                       </a>
                     </h4>
-                    <span></span>
-                    <div>
-                      <div></div>
-                    </div>
                   </HoverWrap>
                 </div>
               </ListTitle>
             </li>
             <li
-              onMouseOver={() => setIsListHover(true)}
-              onMouseOut={() => setIsListHover(false)}
+              onMouseOver={() => setHover("img/main_bg03.jpg")}
+              onMouseOut={() => setHover(null)}
             >
-              {isListHover && (
-                <ImgBg>
-                  <img
-                    className="main_03"
-                    alt="main_bg03"
-                    src="img/main_bg03.jpg"
-                  />
-                </ImgBg>
-              )}
               <ListTitle>
                 <h3>RESPONSIVE WEBSITE</h3>
                 <div>
                   <h2>Zinus</h2>
                   <HoverWrap>
                     <h4>
-                      <a href="https://kimahr.github.io/clonecoding/class/zinus">
+                      <a href="https://kimahr.github.io/clonecoding/class/cuckoo">
                         VIEW
                       </a>
                     </h4>
-                    <span></span>
-                    <div>
-                      <div></div>
-                    </div>
                   </HoverWrap>
                 </div>
               </ListTitle>
             </li>
             <li
-              onMouseOver={() => setIsListHover(true)}
-              onMouseOut={() => setIsListHover(false)}
+              onMouseOver={() => setHover("img/main_bg04.jpg")}
+              onMouseOut={() => setHover(null)}
             >
-              {isListHover && (
-                <ImgBg>
-                  <img
-                    className="main_03"
-                    alt="main_bg03"
-                    src="img/main_bg03.jpg"
-                  />
-                </ImgBg>
-              )}
               <ListTitle>
                 <h3>RENEWAL WEBSITE</h3>
                 <div>
                   <h2>Fresh</h2>
                   <HoverWrap>
                     <h4>
-                      <a href="https://kimahr.github.io/clonecoding/fresh/fresh">
+                      <a href="https://kimahr.github.io/clonecoding/class/cuckoo">
                         VIEW
                       </a>
                     </h4>
-                    <span></span>
-                    <div>
-                      <div></div>
-                    </div>
                   </HoverWrap>
                 </div>
               </ListTitle>
@@ -156,7 +108,20 @@ const Container = styled.div`
   margin: 0 auto;
   background-color: ${({ theme }) => theme.colors.main_color};
 
+  overflow: hidden;
   position: relative;
+`;
+
+const BgImg = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+
+  overflow: hidden;
+  z-index: 1;
 `;
 
 const Wrap = styled.div`
@@ -175,7 +140,7 @@ const Content = styled.div`
 `;
 
 const Title = styled.div`
-  z-index: 2;
+  z-index: 3;
   position: absolute;
   top: 0;
   right: 0;
@@ -211,19 +176,6 @@ const View = styled.div`
   height: 25px;
 
   margin-top: 40px;
-
-  span {
-    z-index: 1;
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    display: inline-block;
-    width: 100%;
-    background: #0066ff;
-    height: 6px;
-    transition: all 0.3s;
-    transform: scale(0, 1);
-  }
 `;
 
 const ContentList = styled.ul`
@@ -241,18 +193,10 @@ const ContentList = styled.ul`
     &:last-child {
       width: 100%;
     }
-  }
-`;
-
-const ImgBg = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  img {
-    z-index: -1;
+    :hover {
+      opacity: 1;
+      transition: all 0.5s;
+    }
   }
 `;
 
@@ -260,6 +204,7 @@ const ListTitle = styled.div`
   position: relative;
   padding-top: 55px;
   padding-left: 25px;
+  color: #fff;
 
   h3 {
     font-weight: ${({ theme }) => theme.fonts.weightSemiRegular};
@@ -291,7 +236,7 @@ const HoverWrap = styled.div`
       display: inline-block;
       width: 100%;
       height: 100%;
-      font-family: "Montserrat";
+
       font-weight: 500;
       color: #fff;
       font-size: 15px;

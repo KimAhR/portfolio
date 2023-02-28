@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/kimahreum/movie-list/static/css/main.9950bf6b.css",
+    "main.js": "/kimahreum/movie-list/static/js/main.4fab0f3e.js",
+    "static/js/787.dfba6593.chunk.js": "/kimahreum/movie-list/static/js/787.dfba6593.chunk.js",
+    "index.html": "/kimahreum/movie-list/index.html",
+    "main.9950bf6b.css.map": "/kimahreum/movie-list/static/css/main.9950bf6b.css.map",
+    "main.4fab0f3e.js.map": "/kimahreum/movie-list/static/js/main.4fab0f3e.js.map",
+    "787.dfba6593.chunk.js.map": "/kimahreum/movie-list/static/js/787.dfba6593.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9950bf6b.css",
+    "static/js/main.4fab0f3e.js"
+  ]
+}
